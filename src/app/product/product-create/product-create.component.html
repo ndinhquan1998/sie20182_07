@@ -1,15 +1,15 @@
 <section id="newRental">
-  <div class="bwm-form">
+  <div class="app-form">
     <div class="row">
       <div class="col-md-5">
-        <h1 class="page-title">Add Product</h1>
+        <h1 class="page-title">Add a Product</h1>
         <form >
           <div class="form-group">
-            <label for="title">Title</label>
+            <label for="title">Product Name</label>
             <input type="text"
                    class="form-control"
-                   id="title"
-                   name="title"
+                   id="name"
+                   name="name"
                    >
           </div>
 
@@ -17,8 +17,8 @@
             <label for="city">Quantity</label>
             <input type="text"
                    class="form-control"
-                   id="city"
-                   name="city"
+                   id="quantity"
+                   name="quantity"
                    >
           </div>
 
@@ -30,13 +30,27 @@
                     name="category"
                     >
               <option > category </option>
-              <option> condo </option>
+              <option> Computer </option>
             </select>
           </div>
 
           <div class="form-group">
-            <img />
+            <label for="city">Manufacturer</label>
+            <input type="text"
+                   class="form-control"
+                   id="manufacturer"
+                   name="manufacturer"
+                   >
+          </div>
 
+          <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file"
+                   name="image"
+                   class="form-control"
+                   id="image"
+                   
+                    />
           </div>
 
           <div class="form-group">
@@ -75,7 +89,7 @@
           </div>
           <button
                   type="button"
-                  class="btn btn-bwm">Submit
+                  class="btn btn-app">Submit
           </button>
         </form>
 
@@ -89,7 +103,7 @@
       <div class="col-md-6 ml-auto">
         <div class="image-container">
           <h2 class="catchphrase">Hundreds of awesome places in reach of few clicks.</h2>
-          <img src="assets/images/add-product.jpg" alt="">
+          <img src="assets/images/add-product.png" alt="">
         </div>
       </div>
     </div>
