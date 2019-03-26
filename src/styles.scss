@@ -1,9 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-$main-color: #61dafb;
-$main-text-color: #484848;
-$light-gray-color: #a9a9a9;
-$main-black-color: #20232a;
-$main-white-color: #ededed;
+@import 'product';
+@import 'color';
 
 .navbar {
     padding: 20px;
@@ -59,7 +56,20 @@ $main-white-color: #ededed;
     }
   }
 
-  .bwm-form{
+  .btn-app{
+    background-color: $main-button-color;
+    border-color: $main-button-color;
+    color: white;
+    padding: 15px 30px;
+    font-size: 20px !important;
+  
+    &:hover, &:focus, &:active{
+      border-color: $main-color !important;
+      background-color:$main-color !important;
+    }
+  }
+
+  .app-form{
 	color: $main-text-color;
 
 	form{
@@ -105,3 +115,21 @@ $main-white-color: #ededed;
 		}
 	}
 }
+.editable-component{
+	.btn{
+		&.btn-editable{
+			margin-left: 5px;
+			color: white;
+			font-size: 12px;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+

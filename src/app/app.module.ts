@@ -9,6 +9,7 @@ import { ProductCreateComponent } from './product/product-create/product-create.
 import { ProductUpdateComponent } from './product/product-update/product-update.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { ProductListItemComponent } from './product/product-list-item/product-list-item.component';
+import { EditableInputComponent } from './common/editable/editable-input/editable-input.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProductListItemComponent } from './product/product-list-item/product-li
     ProductCreateComponent,
     ProductUpdateComponent,
     ProductListComponent,
-    ProductListItemComponent
+    ProductListItemComponent,
+    EditableInputComponent
   ],
   imports: [
     BrowserModule,

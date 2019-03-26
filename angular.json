@@ -30,6 +30,10 @@
               "src/styles.scss",
               "../Ecom/node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
+            "stylePreprocessorOptions":{
+              "includePaths":[
+                "./src/styles"]
+            },
             "scripts": []
           },
           "configurations": {
