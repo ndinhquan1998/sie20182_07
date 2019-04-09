@@ -1,71 +1,119 @@
-<section id="productDetails" >
-  <div class="upper_section">
-    <div class="row">
-      <div class="col-md-6">
-        <img src="assets/images/add-product.png" alt=""/>
-      </div>
+<section id="rentalDetails" *ngIf="product">
+    <div class="upper_section">
+      <div class="row">
+        <div class="col-md-6">
+          <bwm-editable-image
+              [(entity)]="product"
+              [field]="'image'"
+              (entityUpdated)="updateRental(product._id, $event)">
 
-      <div class="col-md-6">
-        <img src="assets/images/add-product.png"/>
+            </bwm-editable-image>
+        </div>
+
       </div>
     </div>
-  </div>
+  
+    <div class="details-section">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="rental">
+            <h2 class="rental-type {{product.category}}">
+                Shared 
+                  
+                <bwm-editable-select
+                [(entity)]="product"
+                [field]="'shared'"
+                [options]="[true, false]"
+                [style]="{'display': 'inline-block'}"
+                [className]="'product-shared'"
+                (entityUpdated)="updateProduct(product._id, $event)">
 
-  <div class="details-section">
-    <div class="row">
-      <div class="col-md-8">
-        <div class="product">
-          <h2 class="product-type ">Category</h2>
-          <div class="product-owner">
-            <img src="https://api.adorable.io/avatars/285/abott@adorable.png" alt="">
-            <span>username</span>
-          </div>
-          
-          <app-editable-input
-            >
+                </bwm-editable-select>
+              
+                  <bwm-editable-select
+                  [(entity)]="product"
+                  [field]="'category'"
+                  [options]="productCategories"
+                  [className]="'product-category'"
+                  (entityUpdated)="updateProduct(product._id, $event)">
 
-          </app-editable-input>
+                  </bwm-editable-select>
+            </h2>
+            <div class="rental-owner">
+              <img src="https://api.adorable.io/avatars/285/abott@adorable.png" alt="">
+              <span>{{product.user.username}}</span>
+            </div>
+            
+<!--     <bwm-editable-input
+              [(entity)]="product"
+              [field]="'title'"
+              [className]="'product-title'"
+              (entityUpdated)="updateProduct(product._id, $event)">
 
-          <app-editable-input
-            >
+            </bwm-editable-input>   -->
 
-          </app-editable-input>
+            <bwm-editable-input
+              [(entity)]="product"
+              [field]="'name'"
+              [transformView]="transformLocation"
+              [className]="'product-name'"
+              (entityUpdated)="updateProduct(product._id, $event)">
 
-          <app-editable-input
-           >
+            </bwm-editable-input>
+  
+            <div class="rental-room-info">
+              <span><i class="fa fa-building"></i>
+                  <bwm-editable-input
+                    [(entity)]="product"
+                    [field]="'bedrooms'"
+                    [type]="'number'"
+                    [style]="{'display': 'inline-block'}"
+                    [className]="'product-bedrooms'"
+                    (entityUpdated)="updateProduct(product._id, $event)">
 
-          </app-editable-input>
+                  </bwm-editable-input> bedrooms
+              </span>
+              <span><i class="fa fa-user"></i>{{countBedroomAssets(4)}} guests</span>
+              <span><i class="fa fa-bed"></i>{{countBedroomAssets(2)}} beds</span>
+            </div>
 
+            <bwm-editable-textarea
+              [(entity)]="product"
+              [field]="'description'"
+              [className]="'product-discription'"
+              [rows]="'6'"
+              [cols]="'50'"
+              (entityUpdated)="updateProduct(product._id, $event)">
 
-          <p class="product-description">
-            Description
-          </p>
-
-          <hr/>
-
-          <div class="product-assets">
-            <h3 class="title">Assets</h3>
-
-            <div class="row">
-              <div class="col-md-6">
-                <span><i class="fa fa-asterisk"></i> Get to Know Us</span>
-                <span><i class="fa fa-thermometer"></i> Make Money with Us</span> 
-                <span><i class="fa fa-location-arrow"></i> Payment Product </span> 
-              </div>
-
-              <div class="col-md-6">
-                <span><i class="fa fa-desktop"></i> Become an Affiliate </span>
-                <span><i class="fa fa-cube"></i> Advertise your product</span>
-                <span><i class="fa fa-cube"></i> Sell your app</span>
+            </bwm-editable-textarea>
+  
+            <hr/>
+  
+            <div class="rental-assets">
+              <h3 class="title">Assets</h3>
+  
+              <div class="row">
+                <div class="col-md-6">
+                  <span><i class="fa fa-asterisk"></i> Cooling</span>
+                  <span><i class="fa fa-thermometer"></i> Heating</span>
+                  <span><i class="fa fa-location-arrow"></i> Iron</span>
+                </div>
+  
+                <div class="col-md-6">
+                  <span><i class="fa fa-desktop"></i> Working area</span>
+                  <span><i class="fa fa-cube"></i> Washing machine</span>
+                  <span><i class="fa fa-cube"></i> Dishwasher</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4"> 
-        <h1> Detail Booking</h1>
-      </div>
+        <div class="col-md-4"> 
+          <bwm-product-detail-shoppingCart 
+            [product]="product"
+            ></bwm-product-detail-shoppingCart>
+        </div>
+    </div>
   </div>
-</div>
-    
-</section>
+      
+  </section>

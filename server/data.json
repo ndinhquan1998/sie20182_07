@@ -1,0 +1,76 @@
+{
+    "products": [{
+        "name": "San Francisco",
+        "category": "condo",
+        "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+        "bedrooms": 4,
+        "shared": false,
+        "description": "Very nice apartment in center of the city.",
+        "price": 43
+        },
+        {
+        "name": "New York",
+        "category": "apartment",
+        "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+        "bedrooms": 1,
+        "shared": true,
+        "description": "Very nice apartment in center of the city.",
+        "price": 11
+        },
+        {
+        "name": "Spisska Nova Ves",
+        "category": "house",
+        "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+        "bedrooms": 5,
+        "shared": false,
+        "description": "Very nice apartment in center of the city.",
+        "price": 23
+      },
+      {
+        "name": "San Francisco",
+        "category": "house",
+        "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+        "bedrooms": 2,
+        "shared": false,
+        "description": "Hiking routes 10 min walking away",
+        "price": 140
+        },
+        {
+        "name": "San Francisco",
+        "category": "apartment",
+        "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+        "bedrooms": 3,
+        "shared": false,
+        "description": "Very nice apartment in China Town",
+        "price": 89
+        },
+        {
+        "name": "New York",
+        "category": "house",
+        "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+        "bedrooms": 6,
+        "shared": false,
+        "description": "Very nice house in Long Island with garden",
+        "price": 189
+      },
+      {
+        "name": "New York",
+        "category": "condo",
+        "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+        "bedrooms": 3,
+        "shared": true,
+        "description": "Building close to Penn Station",
+        "price": 68
+      }
+    ],
+    "users": [{
+      "username": "Test User",
+      "email": "test@gmail.com",
+      "password": "testtest"
+      },{
+      "username": "Test User1",
+      "email": "test1@gmail.com",
+      "password": "testtest1"
+      }
+    ]
+  }
