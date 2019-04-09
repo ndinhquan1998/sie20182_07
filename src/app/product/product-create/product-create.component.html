@@ -2,24 +2,17 @@
   <div class="bwm-form">
     <div class="row">
       <div class="col-md-5">
-        <h1 class="page-title">Add Product</h1>
-        <form >
-          <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text"
-                   class="form-control"
-                   id="title"
-                   name="title"
-                   >
-          </div>
+        <h1 class="page-title">Create Product</h1>
+        <form #productForm="ngForm">
 
           <div class="form-group">
-            <label for="city">Quantity</label>
+            <label for="name">Name</label>
             <input type="text"
                    class="form-control"
-                   id="city"
-                   name="city"
-                   >
+                   id="name"
+                   name="name"
+                   [(ngModel)]="newProduct.name"
+                   required>
           </div>
 
           <div class="form-group">
@@ -28,15 +21,38 @@
             <select class="form-control"
                     id="category"
                     name="category"
-                    >
-              <option > category </option>
-              <option> condo </option>
+                    [(ngModel)]="newProduct.category"
+                    required>
+              <option *ngFor="let category of productCategories"> {{category}} </option>
+              
             </select>
           </div>
 
-          <div class="form-group">
-            <img />
+ <!--         <div class="form-group">
+            <bwm-image-upload (imageUploaded)="handleImageUpload($event)"
+                              (imageError)="handleImageError()"></bwm-image-upload>
 
+          </div> -->
+
+          <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file"
+                   name="image"
+                   class="form-control"
+                   id="image"
+                   placeholder="Upload file..."
+                   (change)="handleImageChange()"
+                    />
+          </div>
+
+          <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input type="number"
+                   class="form-control"
+                   id="quantity"
+                   name="quantity"
+                   [(ngModel)]="newProduct.quantity"
+                   required>
           </div>
 
           <div class="form-group">
@@ -46,22 +62,23 @@
                       class="form-control"
                       id="description"
                       name="description"
-                      >
+                      [(ngModel)]="newProduct.description"
+                      required>
             </textarea>
           </div>
 
           <div class="form-group">
-            <label for="dailyRate">Daily Rate</label>
+            <label for="price">Price</label>
             <div class="input-group">
               <div class="input-group-prepend">
                 <div class="input-group-text">$</div>
               </div>
               <input type="number"
-                     name="dailyRate"
+                     name="price"
                      class="form-control"
-                     id="dailyRate"
-                     name="dailyRate"
-                     >
+                     id="price"
+                     [(ngModel)]="newProduct.price"
+                     required>
             </div>
           </div>
 
@@ -71,17 +88,19 @@
                    class="form-control"
                    id="shared"
                    name="shared"
-                   >
+                   [(ngModel)]="newProduct.shared"
+                   required>
           </div>
-          <button
+          <button (click)="createProduct()"
+                  [disabled]="!productForm.form.valid || !newProduct.image"
                   type="button"
                   class="btn btn-bwm">Submit
           </button>
         </form>
 
-        <div class="alert alert-danger">
-          <p >
-            detail
+        <div *ngIf="errors.length > 0" class="alert alert-danger">
+          <p *ngFor="let error of errors">
+            {{error.detail}}
           </p>
         </div>
       </div>
@@ -89,9 +108,9 @@
       <div class="col-md-6 ml-auto">
         <div class="image-container">
           <h2 class="catchphrase">Hundreds of awesome places in reach of few clicks.</h2>
-          <img src="assets/images/add-product.jpg" alt="">
+          <img src="assets/images/create-rental.jpg" alt="">
         </div>
       </div>
     </div>
   </div>
-  </section>
+</section>
