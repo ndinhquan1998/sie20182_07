@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 const shoppingCartSchema = new Schema({
 	totalPrice: Number,
 	items: Number,
-	guests: Number,
 	createAt: { type: Date, dafaut: Date.now},
 	user: { type: Schema.Types.ObjectId, ref: 'User'},
 	product: { type: Schema.Types.ObjectId, ref: 'Product'},
