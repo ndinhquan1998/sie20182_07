@@ -17,3 +17,16 @@ router.post('/image-upload',UserCtrl.authMiddleware, function(req,res){
 });
 
 module.exports = router; */
+
+const express = require('express');
+
+const router = express.Router();
+
+const ImageCtrl = require('../services/image-upload');
+const UserCtrl = require('../controllers/user');
+
+//router.get('/set-default-image/:imgId/:imgVersion', AuthHelper.VerifyToken, ImageCtrl.SetDefaultImage);
+router.post('/image-upload', UserCtrl.authMiddleware, ImageCtrl.UploadImage);
+
+
+module.exports = router;

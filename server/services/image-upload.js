@@ -1,4 +1,4 @@
-const aws = require('aws-sdk');
+/*const aws = require('aws-sdk');
 const multer = require('multer');
 const multerS3 = require('multer-s3');
 const config = require('../config/dev');
@@ -35,4 +35,63 @@ var upload = multer({
   })
 })
 
-module.exports = upload;
+module.exports = upload; */  
+
+const cloudinary = require('cloudinary');
+const HttpStatus = require('http-status-codes');
+
+const Product = require('../models/product');
+
+cloudinary.config({
+    cloud_name: 'dacecwexu',
+    api_key: '769928176455911',
+    api_secret: 'HZphonEaNSQYlUgx4SiZxtcZQi8'
+});
+
+module.exports = {
+    UploadImage(req,res) {
+        cloudinary.uploader.upload(req.body.image, async result => {
+
+          
+
+    /*        await Product.update(
+                {
+                    _id: req.user._id
+                },
+                {
+                    $push: {
+                        images: {
+                            imgId: result.public_id,
+                            imgVersion: result.version
+                        }
+                    }
+                }
+            ).then(() => res.status(HttpStatus.OK).json({ message: 'Image uploaded successfully' })
+            ).catch(err => 
+                res.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .json({ message: 'Error occured' })    
+            );*/
+        });
+    },
+
+    async SetDefaultImage(req, res) {
+        const { imgId, imgVersion } = req.params;
+
+        await Product.update(
+            {
+                _id: req.user._id
+            },
+            {
+                picId: imgId,
+                picVersion: imgVersion
+            }
+        ).then(() => res.status(HttpStatus.OK).json({ message: 'Default image set' })
+        ).catch(err => 
+            res.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .json({ message: 'Error occured' })    
+        );
+    }
+}
+
+
+

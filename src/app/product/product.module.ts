@@ -26,6 +26,7 @@ import { UppercasePipe } from '../common/pipes/uppercase.pipe';
 
 import { AuthGuard } from '../auth/shared/auth.guard';
 import { ProductGuard } from './shared/product.guard';
+import { FileUploadModule } from 'ng2-file-upload';
 
 const routes: Routes = [
   { path: 'products',
@@ -62,7 +63,8 @@ const routes: Routes = [
 		FormsModule,
 		EditableModule, 
 		ImageUploadModule,
-		PaymentModule
+		PaymentModule,
+		FileUploadModule
 	],
 	providers: [
 		ProductService,

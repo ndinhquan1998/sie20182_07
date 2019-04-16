@@ -10,7 +10,7 @@ const productRoutes = require('./routes/products');
 const userRoutes = require('./routes/users');
 const shoppingCartRoutes = require('./routes/carts');
 const paymentRoutes = require('./routes/payments');
-//const imageUploadRouter = require('./routes/image-upload');
+const imageUploadRouter = require('./routes/image-upload');
 
 mongoose.connect(config.DB_URI).then(()=>{
 	const fakeDb = new FakeDb();
@@ -19,13 +19,15 @@ mongoose.connect(config.DB_URI).then(()=>{
 
 const app = express();
 
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
 app.use('/api/v1/products',productRoutes);
 app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/shoppingCarts', shoppingCartRoutes);
 app.use('/api/v1/payments', paymentRoutes);
-//app.use('/api/v1', imageUploadRouter);
+app.use('/api/v1', imageUploadRouter);
 
 const appPath = path.join(__dirname, '..', 'dist');
 app.use(express.static(appPath));
