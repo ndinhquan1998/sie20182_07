@@ -1,30 +1,38 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrModule } from 'ng6-toastr-notifications';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './common/header/header.component';
+import { HeaderComponent } from './common/header.component';
 import { ProductComponent } from './product/product.component';
-import { ProductCreateComponent } from './product/product-create/product-create.component';
-import { ProductUpdateComponent } from './product/product-update/product-update.component';
-import { ProductListComponent } from './product/product-list/product-list.component';
-import { ProductListItemComponent } from './product/product-list-item/product-list-item.component';
-import { EditableInputComponent } from './common/editable/editable-input/editable-input.component';
+
+import { ProductModule } from './product/product.module';
+import { AuthModule } from './auth/auth.module';
+ 
+
+const routes: Routes = [
+  {path: '', redirectTo: '/products',pathMatch:'full'},
+  ]
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ProductComponent,
-    ProductCreateComponent,
-    ProductUpdateComponent,
-    ProductListComponent,
-    ProductListItemComponent,
-    EditableInputComponent
+
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
-    AppRoutingModule
+    ProductModule,
+    AuthModule,
+    NgbModule.forRoot(),
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule, 
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

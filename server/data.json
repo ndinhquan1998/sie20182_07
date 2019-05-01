@@ -1,0 +1,67 @@
+{
+    "products": [{
+        "name": "Counter Strike: Global Offensive",
+        "category": "Video Games",
+        "image": "https://upload.wikimedia.org/wikipedia/vi/thumb/0/06/Counter-Strike_Global_Offensive_poster.jpg/300px-Counter-Strike_Global_Offensive_poster.jpg",
+        "quantity": 4,
+        "shared": false,
+        "description": "Counter-Strike: Global Offensive (CS:GO) is a multiplayer first-person shooter video game developed by Hidden Path Entertainment and Valve Corporation. It is the fourth game in the Counter-Strike series and was released for Microsoft Windows, OS X, Xbox 360, and PlayStation 3 on August 21, 2012, while the Linux version was released in 2014.",
+        "price": 43
+        },
+        {
+        "name": "2019 Lenovo ThinkPad",
+        "category": "Electronics",
+        "image": "https://images-na.ssl-images-amazon.com/images/I/51zGqbn44EL._SL1000_.jpg",
+        "quantity": 1,
+        "shared": true,
+        "description": "Upgrade and Choose from  8GB/16GB/32GB DDR4 RAM; Choose  500GB/1TB HDD or 256GB/512GB/1TB SSD",
+        "price": 11
+        },
+        {
+        "name": "Batman",
+        "category": "Video Games",
+        "image": "https://images-na.ssl-images-amazon.com/images/I/91VeHRSDzxL._SL1500_.jpg",
+        "quantity": 5,
+        "shared": false,
+        "description": "Batman is a 1986 3D isometric action-adventure game by Ocean Software for the Amstrad PCW,[2] Amstrad CPC, ZX Spectrum, and MSX,[3] and the first Batman game developed",
+        "price": 23
+      },
+      {
+        "name": "Nike Air Max 90",
+        "category": "Sports",
+        "image": "https://render.nikeid.com/ir/render/nikeidrender/Am90EssHO18_v1?obj=/s/shadow/shad&show&color=000000&obj=/s/g6&color=c0c0c2&show&obj=/s/g4&color=acafb4&show&obj=/s/g7&color=ff4248&show&obj=/s/g11&color=dfe1db&show&obj=/s/g1/mesh&color=e2e8e8&show&obj=/s/g2/suede&color=aeafb1&show&obj=/s/g3/lea&color=282c41&show&obj=/s/g5/lea&color=f5f5f5&show&obj=/s/g14&color=ebefe2&show&obj=/s/g22/suede&color=aeafb1&show&obj=/s/g8&color=ff4248&show&obj=/s/g10&color=e2e8e8&show&obj=/s/g12&color=d1d1d1&show&obj=/s/g15&color=808080&show&obj=/s/g17/wove&color=d1d1d1&show&obj=/s/g13&color=ff2b32&show&obj=/s/g16/solid&color=1d273c&show&obj=/s/g19/npid&color=1c1c1c&show&obj=/s&req=object&fmt=png-alpha&icc=AdobeRGB&wid=640",
+        "quantity": 2,
+        "shared": false,
+        "description": "Hiking routes 10 min walking away",
+        "price": 140
+        },
+        {
+        "name": "The Dispatcher",
+        "category": "Books",
+        "image": "https://images-na.ssl-images-amazon.com/images/I/51qBejIy-iL._SX342_.jpg",
+        "quantity": 3,
+        "shared": false,
+        "description": "Zachary Quinto - best known for his role as the Nimoy-approved Spock in the recent Star Trek reboot and the menacing, power-stealing serial killer, Sylar, in Heroes - brings his well-earned sci-fi credentials and simmering intensity to this audio-exclusive novella from master storyteller John Scalzi.",
+        "price": 89
+        },
+        {
+        "name": "Premium 2019 Dell XPS",
+        "category": "Electronics",
+        "image": "https://images-na.ssl-images-amazon.com/images/I/71N1EA6ibzL._SL1500_.jpg",
+        "quantity": 6,
+        "shared": false,
+        "description": "Upgrade Your RAM and Hard Drive from 4GB 128G PCIe SSD up to 32G DDR4, 1TB PCIe SSD for Your Desired Specs",
+        "price": 189
+      }
+    ],
+    "users": [{
+      "username": "Test User",
+      "email": "test@gmail.com",
+      "password": "testtest"
+      },{
+      "username": "Test User1",
+      "email": "test1@gmail.com",
+      "password": "testtest1"
+      }
+    ]
+  }
