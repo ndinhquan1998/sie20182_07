@@ -1,0 +1,9 @@
+ <a routerLink="/products/{{product._id}}">
+ <div class="card bwm-card">
+     <img class="card-img-top" src="{{product.image}}" alt=""/>
+     <div class="card-block">
+           <h6 class="card-subtitle {{product.category}}">{{product.shared ? 'Shared' : 'Whole'}} {{product.category}} &#183; {{product.name}}</h6>
+           <p class="card-text">${{product.price}} &#183; Free Cancelation</p>
+     </div>
+</div>
+</a>
