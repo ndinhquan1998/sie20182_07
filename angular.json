@@ -29,17 +29,17 @@
             ],
             "styles": [
               "src/styles.scss",
-              "../sie20182_07/node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "../sie20182_07/node_modules/font-awesome/css/font-awesome.min.css",
-              "../sie20182_07/node_modules/ng2-toastr/bundles/ng2-toastr.min.css"
+              "../ANgu/node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "../ANgu/node_modules/font-awesome/css/font-awesome.min.css",
+              "../ANgu/node_modules/ng2-toastr/bundles/ng2-toastr.min.css"
             ],
             "stylePreprocessorOptions":{
                 "includePaths":[
                   "./src/styles"]
               },
             "scripts": [
-              "../sie20182_07/node_modules/jquery/dist/jquery.js",
-              "../sie20182_07/node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "../ANgu/node_modules/jquery/dist/jquery.js",
+              "../ANgu/node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {

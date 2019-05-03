@@ -1,4 +1,4 @@
-
+import { ShoppingCart } from '../../shoppingCart/shared/shoppingCart.model';
 
 export class Product{
 
@@ -17,5 +17,5 @@ export class Product{
 	price: number;
 	shared: boolean;
 	createAt: string;
-	
+	shoppingCarts: ShoppingCart[];
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import { ShoppingCart } from '../../shoppingCart/shared/shoppingCart.model';
 import * as moment from 'moment';
 
 @Injectable()
@@ -25,5 +25,12 @@ export class HelperService{
         return moment(date).format(dateFormat);
     }
 
+    public formatBookingDate(date){
+        return this.formatDate(date, ShoppingCart.DATE_FORMAT);
+    }
 
+
+    public getBookingRangeOfDates(startAt, endAt){
+        this.getRangeOfDates(startAt, endAt, ShoppingCart.DATE_FORMAT);
+    }
 }
