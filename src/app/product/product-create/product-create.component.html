@@ -29,8 +29,10 @@
           </div>
 
           <div class="form-group">
-   <!--         <bwm-image-upload (imageUploaded)="handleImageUpload($event)"></bwm-image-upload> -->
-                <label  class="image-upload-container btn btn-bwm">
+            <bwm-image-upload (imageUploaded)="handleImageUpload($event)"
+                              (imageError)="handleImageError()">
+            </bwm-image-upload> 
+    <!--            <label  class="image-upload-container btn btn-bwm">
                   <span>Select Image</span>
                     <input  
                             type="file" accept='image/*'           
@@ -41,7 +43,7 @@
                 <button 
                         (click)='Upload()' 
                         class="btn btn-success" 
-                        type="button">Upload Image</button>
+                        type="button">Upload Image</button> -->
           </div> 
 
  <!--         <div class="form-group">

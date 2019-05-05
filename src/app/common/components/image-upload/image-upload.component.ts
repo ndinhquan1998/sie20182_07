@@ -4,8 +4,6 @@ import { ToastrManager } from 'ng6-toastr-notifications';
 import { FileUploader } from 'ng2-file-upload';
 import { HttpErrorResponse } from '@angular/common/http';
 
-const URL = 'http://localhost:3001/api/v1/image-upload';
-
 
 class FileSnippet {
   static readonly IMAGE_SIZE = {width: 950, height: 720};
@@ -24,11 +22,6 @@ class FileSnippet {
 })
 export class ImageUploadComponent  {
 
-  uploader: FileUploader = new FileUploader({
-    url: URL,
-    disableMultipart: true
-  });
-
   @Output() imageUploaded = new EventEmitter();
 
   @Output() imageError = new EventEmitter();
@@ -37,13 +30,13 @@ export class ImageUploadComponent  {
 
   @Output() croppingCanceled = new EventEmitter();
 
-  selectedFile: any;
+  selectedFile: FileSnippet;
   imageChangedEvent: any;
 
   constructor(private toastr: ToastrManager,
               private imageService: ImageUploadService) { }
 
- /* private onSuccess(imageUrl: string){
+  private onSuccess(imageUrl: string){
       this.selectedFile.pending = false;
       this.selectedFile.status = 'OK';
       this.imageChangedEvent = null;
@@ -107,9 +100,11 @@ export class ImageUploadComponent  {
             this.selectedFile.src = event.target.result;   
 
             this.selectedFile.pending = true;
+            console.log(this.selectedFile);
             this.imageService.uploadImage(this.selectedFile.file).subscribe(
               (imageUrl: string) => {
                   this.onSuccess(imageUrl);
+                  console.log(imageUrl);
               },
               (errResponse: HttpErrorResponse) => {
                 this.toastr.errorToastr(errResponse.error.errors[0].detail,'Success');
@@ -120,9 +115,9 @@ export class ImageUploadComponent  {
 
         reader.readAsDataURL(this.selectedFile.file);
   }
-  }  */
+  }  
 
-OnFileSelected(event) {
+/*OnFileSelected(event) {
   const file: File = event[0];
 
   this.ReadAsBase64(file)
@@ -159,5 +154,5 @@ ReadAsBase64(file): Promise<any> {
 
   return fileValue;
 }
-
+ */
 }

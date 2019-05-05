@@ -41,15 +41,15 @@ export class ProductCreateComponent implements OnInit {
 
 
 
- // handleImageUpload(imageUrl: string){
- //     this.newProduct.image = imageUrl;
-//  }
+  handleImageUpload(imageUrl: string){
+      this.newProduct.image = imageUrl;
+  }
 
-//  handleImageError(){
-//      this.newProduct.image ='';
-//  } 
+  handleImageError(){
+      this.newProduct.image ='';
+  } 
 
-  OnFileSelected(event) {
+ /* OnFileSelected(event) {
     const file: File = event[0];
   
     this.ReadAsBase64(file)
@@ -70,7 +70,7 @@ export class ProductCreateComponent implements OnInit {
     );
 
     this.newProduct.image = this.selectedFile;
-  }
+  } 
   
   ReadAsBase64(file): Promise<any> {
     const reader = new FileReader();
@@ -87,7 +87,7 @@ export class ProductCreateComponent implements OnInit {
     });
   
     return fileValue;
-  }
+  } */
 
   createProduct(){
     this.productService.createProduct(this.newProduct).subscribe(

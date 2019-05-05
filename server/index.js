@@ -22,6 +22,7 @@ const app = express();
 //app.use(bodyParser.json());
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+app.use("/images", express.static(path.join("server/images")));
 
 app.use('/api/v1/products',productRoutes);
 app.use('/api/v1/users', userRoutes);
