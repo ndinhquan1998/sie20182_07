@@ -1,19 +1,33 @@
-/*const express = require('express');
+const express = require('express');
 const router = express.Router();
 const UserCtrl = require('../controllers/user');
 
-const upload = require('../services/image-upload');
+const multer = require('multer');
 
-const singleUpload = upload.single('image');
-
-router.post('/image-upload',UserCtrl.authMiddleware, function(req,res){
-    singleUpload(req,res,function(err){
-        if(err){
-            return res.status(422).send({errors: [{title: 'Image Upload Error', detail: err.message}]});
-        }
-
-        return res.json({'imageUrl': req.file.location});
-    });
+const cloudinary = require('cloudinary');
+cloudinary.config({
+    cloud_name: 'dacecwexu',
+    api_key: '769928176455911',
+    api_secret: 'HZphonEaNSQYlUgx4SiZxtcZQi8'
 });
 
-module.exports = router; */
+var upload = multer({
+    storage: multer.diskStorage({}),
+    fileFilter: (req, file, cb) => {
+        if(!file.mimetype.match(/jpe|jpeg|png|gif$i/)) {
+            cb(new Error('not supported'), false)
+            return
+        }
+
+        cb(null, true)
+    }
+})
+
+router.post('/image-upload', upload.single('image'), async (req, res) => {
+
+      const result = await cloudinary.v2.uploader.upload(req.file.path);
+      console.log(result);
+      res.json({'imageUrl': result.url});     
+});
+
+module.exports = router; 

@@ -1,7 +1,9 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { ImageUploadService } from './image-upload.service';
 import { ToastrManager } from 'ng6-toastr-notifications';
+import { FileUploader } from 'ng2-file-upload';
 import { HttpErrorResponse } from '@angular/common/http';
+
 
 class FileSnippet {
   static readonly IMAGE_SIZE = {width: 950, height: 720};
@@ -98,9 +100,11 @@ export class ImageUploadComponent  {
             this.selectedFile.src = event.target.result;   
 
             this.selectedFile.pending = true;
+            console.log(this.selectedFile);
             this.imageService.uploadImage(this.selectedFile.file).subscribe(
               (imageUrl: string) => {
                   this.onSuccess(imageUrl);
+                  console.log(imageUrl);
               },
               (errResponse: HttpErrorResponse) => {
                 this.toastr.errorToastr(errResponse.error.errors[0].detail,'Success');
@@ -111,6 +115,44 @@ export class ImageUploadComponent  {
 
         reader.readAsDataURL(this.selectedFile.file);
   }
+  }  
+
+/*OnFileSelected(event) {
+  const file: File = event[0];
+
+  this.ReadAsBase64(file)
+    .then(result => {
+      this.selectedFile = result;
+    })
+    .catch(err => console.log(err));
 }
 
+Upload() {
+  this.imageService.AddImage(this.selectedFile).subscribe(
+    data => {
+   //   this.socket.emit('refresh', {});
+      const filePath = <HTMLInputElement>document.getElementById('filePath');
+      filePath.value = '';
+    },
+    err => console.log(err)
+  );
+}
+
+ReadAsBase64(file): Promise<any> {
+  const reader = new FileReader();
+  const fileValue = new Promise((resolve,reject) => {
+    reader.addEventListener('load', () => {
+      resolve(reader.result);
+    });
+
+    reader.addEventListener('error', event => {
+      reject(event);
+    });
+
+    reader.readAsDataURL(file);
+  });
+
+  return fileValue;
+}
+ */
 }

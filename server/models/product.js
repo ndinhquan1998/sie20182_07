@@ -11,7 +11,12 @@ const productSchema = new Schema({
 	price: Number,
 	createAt: { type: Date, default: Date.now},
 	user: {type: Schema.Types.ObjectId, ref: 'User'},
-	shoppingCarts: [{type: Schema.Types.ObjectId, ref: 'ShoppingCart'}]
+	shoppingCarts: [{type: Schema.Types.ObjectId, ref: 'ShoppingCart'}],
+/*	picVersion: { type: String, default: '1555139651' },
+    picId: { type: String, default: 'kaj4dizrpni4twp72yzr.png' },
+    imgId: { type: String, default: '' },
+    imgVersion: { type: String, default: '' }     */   
+    
 });
 
 module.exports = mongoose.model('Product', productSchema);
