@@ -14,7 +14,7 @@ const imageUploadRouter = require('./routes/image-upload');
 
 mongoose.connect(config.DB_URI).then(()=>{
 	const fakeDb = new FakeDb();
-//	fakeDb.seedDb();
+	fakeDb.seedDb();
 });
 
 const app = express();
