@@ -12,7 +12,7 @@ export class Product{
 	street: string;
 	category: string;
 	image: string;
-	quantity: number;
+	bedrooms: number;
 	description: string;
 	price: number;
 	shared: boolean;

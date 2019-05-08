@@ -5,11 +5,16 @@
           <bwm-editable-image
               [(entity)]="product"
               [field]="'image'"
-              (entityUpdated)="updateProduct(product._id, $event)">
+              (entityUpdated)="updateRental(product._id, $event)">
 
             </bwm-editable-image>
         </div>
-
+  
+        <div class="col-md-6">
+          <bwm-map 
+              [locationSubject]="locationSubject"
+              [location]="product.name+', '+product.street"></bwm-map>
+        </div>
       </div>
     </div>
   
@@ -60,20 +65,30 @@
               (entityUpdated)="updateProduct(product._id, $event)">
 
             </bwm-editable-input>
+
+            <bwm-editable-input
+              [(entity)]="product"
+              [field]="'street'"
+              [transformView]="transformLocation"
+              [className]="'product-street'"
+              (entityUpdated)="updateProduct(product._id, $event)">
+
+            </bwm-editable-input>
   
             <div class="rental-room-info">
               <span><i class="fa fa-building"></i>
                   <bwm-editable-input
                     [(entity)]="product"
-                    [field]="'quantity'"
+                    [field]="'bedrooms'"
                     [type]="'number'"
                     [style]="{'display': 'inline-block'}"
-                    [className]="'product-quantity'"
+                    [className]="'product-bedrooms'"
                     (entityUpdated)="updateProduct(product._id, $event)">
 
-                  </bwm-editable-input> items
+                  </bwm-editable-input> bedrooms
               </span>
-              
+              <span><i class="fa fa-user"></i>{{countBedroomAssets(4)}} guests</span>
+              <span><i class="fa fa-bed"></i>{{countBedroomAssets(2)}} beds</span>
             </div>
 
             <bwm-editable-textarea
