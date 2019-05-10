@@ -65,6 +65,6 @@ export class ProductUpdateComponent implements OnInit {
   }
 
   countBedroomAssets(assetsNum:number){
-      return parseInt(<any>this.product.bedrooms || 0,10) + assetsNum;
+      return parseInt(<any>this.product.quantity || 0,10) + assetsNum;
   }
 }

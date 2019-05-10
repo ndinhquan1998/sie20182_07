@@ -5,9 +5,6 @@
 				<img src="{{product.image}}" alt=""/>
 			</div>
 
-			<div class="col-md-6">
-				<bwm-map [location]="product.name+', '+product.street"></bwm-map> 
-			</div>
 		</div>
 	</div>
 
@@ -24,9 +21,8 @@
 					<h2 class="rental-city">{{product.name | ucwords}}</h2>
 
 					<div class="rental-room-info">
-						<span><i class="fa fa-building"></i>{{product.bedrooms}} bedrooms</span>
-						<span><i class="fa fa-user"></i>{{product.bedrooms+4}} guests</span>
-						<span><i class="fa fa-bed"></i>{{product.bedrooms +2}} bedrooms</span>
+						<span><i class="fa fa-building"></i>{{product.quantity}} items</span>
+	
 					</div>
 
 					<p class="rental-description">

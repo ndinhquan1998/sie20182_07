@@ -8,7 +8,7 @@
         [options]="options" (selected)="selectedDate($event, daterange)"/>  -->
 
         <div class="form-group">
-          <label for="items">Guests</label>
+          <label for="items">Items</label>
           <input [(ngModel)]="newShoppingCart.items" 
                 name="items"
                 type="number" 
@@ -20,7 +20,7 @@
       </div>
 
         <div class="form-group">
-            <label for="guests">Guests</label>
+            <label for="guests">Shipping Weights</label>
             <input [(ngModel)]="newShoppingCart.guests" 
                   name="guests"
                   type="number" 
@@ -38,7 +38,7 @@
   </ng-container>
 
   <div *ngIf="!auth.isAuthenticated()" class="should-login">
-      <a class="btn btn-bwm" routerLink="/login">Login and book this place today</a>
+      <a class="btn btn-bwm" routerLink="/login">Login and add to your Shopping Cart</a>
   </div>
 
     <p class="booking-note-title">People are interested into this house</p>
